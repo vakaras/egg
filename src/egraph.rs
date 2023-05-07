@@ -237,7 +237,7 @@ impl<L: Language, N: Analysis<L>> EGraph<L, N> {
     }
 
     fn from_enodes(enodes: Vec<(L, Id)>, analysis: N) -> Self {
-        let mut egraph = Self::new(analysis);
+        let mut egraph = Self::new(analysis).with_explanations_enabled();
         let mut ids: HashMap<Id, Id> = Default::default();
 
         loop {
